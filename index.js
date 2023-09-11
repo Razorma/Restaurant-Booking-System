@@ -1,10 +1,19 @@
 import express from "express";
-import pgp from "pg-promise";
+import pgPromise from "pg-promise";
 import exphbs from "express-handlebars";
 import bodyParser from "body-parser";
 import flash from "flash-express";
 
 const app = express()
+const pgp = pgPromise();
+
+// Define the database connection string
+const connectionString = process.env.DATABASE_URL || 'postgres://xxiqgnir:EAjKP_-otMErlcvMp2ncLGu-yIVzzWs3@tai.db.elephantsql.com/xxiqgnir';
+
+
+// Connect to the database using pgp
+const db = pgp({ connectionString});
+
 
 app.use(express.static('public'));
 app.use(flash());
