@@ -5,14 +5,18 @@
     <div class="notification is-danger is-light">
         {{!-- you can remove the button below if you want --}}
         <button class="delete"></button>
-        Error Flash messages goes here...
-        <a href="https://bulma.io/documentation/elements/notification/">Read here if you wanna change the style</a>
+         {{#if messages.error}}
+        <div class="error">{{messages.error}}</div>
+        {{/if}}
+        {{!-- <a href="https://bulma.io/documentation/elements/notification/">Read here if you wanna change the style</a> --}}
     </div>
     <div class="notification is-success is-light">
         {{!-- you can remove the button below if you want --}}
         <button class="delete"></button>
-        Success Flash messages goes here...
-        <a href="https://bulma.io/documentation/elements/notification/">Read here if you wanna change the style</a>
+       {{#if messages.success}}
+        <div class="success">{{messages.success}}</div>
+        {{/if}}
+        {{!-- <a href="https://bulma.io/documentation/elements/notification/">Read here if you wanna change the style</a> --}}
     </div>
 
 
@@ -23,7 +27,7 @@
         <div class="column">
             <div class="panel">
                 <p class="panel-heading">
-                    Table XYZ
+                    {{this.table_name}}
                 </p>
                 <div class="panel-block">
                     <div class="field is-horizontal">
@@ -42,7 +46,7 @@
                         <div class="field-body">
                             <div class="field">
                                 <p class="control">
-                                    <input class="input is-static" type="email" value="5" readonly>
+                                    <input class="input is-static" type="email" value="{{this.capacity}}" readonly>
                                 </p>
                             </div>
                         </div>
@@ -55,7 +59,7 @@
                         <img src="./images/reserved.png" width="60">
                         {{else}}
                         <label class="radio">
-                            <input type="radio" name="tableId" id="tableId">
+                            <input type="radio" name="tableId" id="tableId" value="{{this.table_name}}">
                             Book this table
                         </label>
                         {{/if}}
@@ -63,9 +67,11 @@
 
 
                 </div>
+                
             </div>
+            
         </div>
-
+        
 
         {{/each}}
     </div>
@@ -100,5 +106,6 @@
     <div class="field">
         <input class="button is-primary" type="submit" value="Book">
     </div>
+    <a href="/bookings"><button type="button" class="button is-primary">BOOKINGS</button></a>
 </form>
 </div>

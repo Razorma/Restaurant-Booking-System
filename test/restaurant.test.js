@@ -2,9 +2,9 @@ import assert from "assert"
 import RestaurantTableBooking from "../services/restaurant.js";
 import pgPromise from 'pg-promise';
 
-const DATABASE_URL = 'postgres://xxiqgnir:EAjKP_-otMErlcvMp2ncLGu-yIVzzWs3@tai.db.elephantsql.com/xxiqgnir';
+const DATABASE_URL_TEST = 'postgres://xxiqgnir:EAjKP_-otMErlcvMp2ncLGu-yIVzzWs3@tai.db.elephantsql.com/xxiqgnir';
 
-const connectionString = process.env.DATABASE_URL || DATABASE_URL;
+const connectionString = process.env.DATABASE_URL_TEST || DATABASE_URL_TEST;
 const db = pgPromise()(connectionString);
 
 describe("The restaurant booking table", function () {
