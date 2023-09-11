@@ -59,8 +59,8 @@ app.post("/book", async (req, res) => {
 
  app.get("/bookings", async (req, res) => {
    
-     
-    res.render('bookings')
+    const tables = await restaurantService.getTables()
+    res.render('bookings',{ tables})
  });
 //  app.post("/cancel", async (req, res) => {
 //     const {cancelDay} = req.body

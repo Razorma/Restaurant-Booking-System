@@ -30,35 +30,18 @@
         <th>Contact number</th>
         <th></th>
     </tr>
+     {{#each tables}}
     <tr>
-        <td>Table 1</td>
-        <td>4</td>
-        <td>2</td>
-        <td>Indiana Jones</td>
-        <td>082 900 1276</td>
+        <td>{{this.table_name}}</td>
+        <td>{{this.capacity}}</td>
+        <td>{{this.number_of_people}}</td>
+        <td>{{this.username}}</td>
+        <td>{{this.contact_number}}</td>
         <td>
             <button class="button is-warning" >Cancel booking</button>
         </td>
     </tr>
-    <tr>
-        <td>Table 2</td>
-        <td>4</td>
-        <td>2</td>
-        <td>Lara Croft</td>
-        <td>082 786 3432</td>
-        <td>
-            <button class="button is-warning" >Cancel booking</button>
-        </td>
+    {{/each}}
 
-    </tr>
-    <tr>
-        <td>Table 3</td>
-        <td>4</td>
-        <td>2</td>
-        <td>Indiana Jones</td>
-        <td>082 900 1276</td>
-        <td>
-            <button class="button is-warning" >Cancel booking</button>
-        </td>
-    </tr>
 </table>
+
