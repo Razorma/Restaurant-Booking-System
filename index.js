@@ -2,7 +2,7 @@ import express from "express";
 import pgPromise from "pg-promise";
 import exphbs from "express-handlebars";
 import bodyParser from "body-parser";
-import flash from "flash-express";
+import flash from "express-flash";
 
 const app = express()
 const pgp = pgPromise();
